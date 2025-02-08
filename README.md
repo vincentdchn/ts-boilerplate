@@ -27,7 +27,7 @@ This boilerplate comes pre-configured with:
 ### Prerequisites
 
 - Node.js (v20 or higher recommended)
-- npm or yarn or pnpm
+- pnpm
 
 ### Installation
 
