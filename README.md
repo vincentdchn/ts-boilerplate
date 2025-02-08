@@ -13,7 +13,7 @@ No bloat, just pure developer happiness with my preferred configuration. Use it 
 
 <br/>
 
-## 🚀 Features
+## Features
 
 This boilerplate comes pre-configured with:
 
@@ -22,7 +22,7 @@ This boilerplate comes pre-configured with:
 - **Vitest**: Modern testing framework
 - **ts-reset**: Type safety improvements
 
-## 🛠️ Setup
+## Setup
 
 ### Prerequisites
 
@@ -56,7 +56,7 @@ pnpm install
 pnpm dev
 ```
 
-## 📝 Configuration Details
+## Configuration Details
 
 ### TypeScript Configuration
 
@@ -78,7 +78,7 @@ Comprehensive linting setup with:
 - Best practices
 - Modern JavaScript conventions
 
-## 🧪 Testing
+## Testing
 
 Run tests in watch mode using:
 
@@ -98,7 +98,7 @@ Tests with coverage:
 pnpm test:coverage
 ```
 
-## 📚 Project Structure
+## Project Structure
 
 ```
 typescript-boilerplate/
@@ -109,7 +109,7 @@ typescript-boilerplate/
 └── package.json      # Project dependencies and scripts
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch
@@ -117,11 +117,11 @@ typescript-boilerplate/
 4. Push to the branch
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 📝 Available Scripts
+## Available Scripts
 
 - `dev`: Run development server with watch mode
 - `test`: Run tests with Vitest
