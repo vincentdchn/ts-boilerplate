@@ -22,7 +22,17 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*.js"]
-        }
+        },
+        "outDir": "./dist"
     },
-    "exclude": ["eslint.config.js", "node_modules", "coverage"]
+    "exclude": [
+        "eslint.config.js",
+        "node_modules",
+        "coverage",
+        "dist",
+        "**/*.test.ts",
+        "**/*.test.js",
+        "vitest.config.ts",
+        "vitest.config.js"
+    ]
 }
