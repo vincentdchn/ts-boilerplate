@@ -21,6 +21,7 @@ This boilerplate comes pre-configured with:
 - **ESLint**: Advanced linting with multiple plugins
 - **Vitest**: Modern testing framework
 - **ts-reset**: Type safety improvements
+- **Type-safe Environment**: Zod-powered environment variable validation and typing
 
 ## Setup
 
@@ -50,7 +51,15 @@ nvm use
 pnpm install
 ```
 
-4. Run the development server:
+4. Configure environment:
+
+```bash
+cp .env.example .env
+```
+
+Generate a secure APP_KEY (at least 32 characters) and update it in your `.env` file.
+
+5. Run the development server:
 
 ```bash
 pnpm dev
@@ -130,3 +139,18 @@ This project is licensed under the MIT License.
 - `lint`: Run ESLint with auto-fix
 - `format`: Format code with Prettier
 - `build`: Build TypeScript project
+
+### Environment Configuration
+
+The environment configuration is handled in a type-safe manner using Zod for validation and typing. Key features include:
+
+- **Runtime Validation**: Environment variables are validated at startup
+- **Type Safety**: Full TypeScript support for environment variables
+- **Schema Definition**: Clear schema definition for required environment variables
+- **Development Safety**: Example environment file provided
+- **IDE Support**: Full autocomplete support for process.env
+
+Required environment variables:
+
+- `APP_KEY`: A base64 string of at least 32 characters
+- `NODE_ENV`: Either 'development' or 'production' (defaults to 'development')

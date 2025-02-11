@@ -8,7 +8,7 @@ import tseslint from 'typescript-eslint';
 export default [
     {
         files: ['**/*.ts', '**/*.test.ts'],
-        ignores: ['**/*.config.js', '**/*.test.js'],
+        ignores: ['**/*.config.js', '**/*.test.js', '**/*.d.ts'],
         languageOptions: {
             globals: globals.browser,
             parser: tseslint.parser,
@@ -25,6 +25,10 @@ export default [
             ...pluginJs.configs.recommended.rules,
             ...tseslint.configs.recommended.rules,
             'unicorn/filename-case': ['error', { cases: { kebabCase: true } }],
+            'unicorn/prevent-abbreviations': [
+                'error',
+                { replacements: { env: false } },
+            ],
         },
     },
 ];

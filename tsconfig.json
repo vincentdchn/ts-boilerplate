@@ -19,6 +19,7 @@
         "sourceMap": true,
         /* If your code doesn't run in the DOM: */
         "lib": ["es2022"],
+        "types": ["node"],
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*.js"]
@@ -30,8 +31,6 @@
         "node_modules",
         "coverage",
         "dist",
-        "**/*.test.ts",
-        "**/*.test.js",
         "vitest.config.ts",
         "vitest.config.js"
     ]
