@@ -35,7 +35,7 @@
         "eslint": "^9.20.0",
         "eslint-plugin-perfectionist": "^4.8.0",
         "eslint-plugin-unicorn": "^57.0.0",
-        "globals": "^15.14.0",
+        "globals": "^16.0.0",
         "pino": "^9.6.0",
         "pino-pretty": "^13.0.0",
         "tsup": "^8.3.6",
