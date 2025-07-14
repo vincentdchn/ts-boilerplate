@@ -4,7 +4,7 @@
  */
 
 // Initialize environment variables
-export * from '@/config/env';
+export * from "@/config/env.ts";
 
 // Here we can add other initializations:
 // - Logging configuration

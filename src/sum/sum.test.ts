@@ -1,9 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { expect } from "jsr:@std/expect";
+import { sum } from "./sum.ts";
 
-import { sum } from './sum.js';
-
-describe('sum', () => {
-    it('should return the sum of two numbers', () => {
-        expect(sum(1, 2)).toBe(3);
-    });
+Deno.test("sum", () => {
+  Deno.test("should return the sum", () => {
+    expect(sum(1, 2)).toBe(3);
+  });
 });

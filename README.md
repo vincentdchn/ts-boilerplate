@@ -2,12 +2,13 @@
   TypeScript Boilerplate
 </h1>
 <h4 align="center">
-  A Modern TypeScript Development Environment
+  A Modern TypeScript Development Environment with Deno 2
 </h4>
 <p align="center">
 Fed up with endless boilerplate hunting? Same here!
 After spending way too much time searching for the "perfect" TypeScript setup,
 I decided to create my own opinionated boilerplate with exactly what I need.
+Now migrated to Deno 2 for an even better developer experience!
 No bloat, just pure developer happiness with my preferred configuration. Use it if you like it!
 </p>
 
@@ -17,18 +18,18 @@ No bloat, just pure developer happiness with my preferred configuration. Use it 
 
 This boilerplate comes pre-configured with:
 
-- **TypeScript**: Latest version with strict type checking
-- **ESLint**: Advanced linting with multiple plugins
-- **Vitest**: Modern testing framework
-- **ts-reset**: Type safety improvements
+- **Deno 2**: Modern runtime with built-in TypeScript support
+- **Native TypeScript**: No compilation step needed, runs TypeScript natively
+- **Deno Lint**: Built-in linting with Deno's linter
+- **Deno Test**: Native testing framework
 - **Type-safe Environment**: Zod-powered environment variable validation and typing
+- **Secure by Default**: Explicit permissions model
 
 ## Setup
 
 ### Prerequisites
 
-- Node.js (v20 or higher recommended)
-- pnpm
+- [Deno 2](https://deno.com/) (latest version)
 
 ### Installation
 
@@ -39,72 +40,83 @@ git clone https://github.com/vincentdchn/typescript-boilerplate.git
 cd typescript-boilerplate
 ```
 
-2. Use correct Node version
+2. Configure environment:
+
+Create a `.env` file in the project root:
 
 ```bash
-nvm use
-```
-
-3. Install dependencies:
-
-```bash
-pnpm install
-```
-
-4. Configure environment:
-
-```bash
-cp .env.example .env
+# Application Configuration
+APP_KEY=your-32-character-base64-app-key-here
+NODE_ENV=development
 ```
 
 Generate a secure APP_KEY (at least 32 characters) and update it in your `.env` file.
 
-5. Run the development server:
+3. Run the development server:
 
 ```bash
-pnpm dev
+deno task dev
 ```
 
 ## Configuration Details
 
-### TypeScript Configuration
+### Deno Configuration
 
-The `tsconfig.json` includes:
+The `deno.json` includes:
 
-- Modern ECMAScript features (`target: "es2022"`)
+- Modern ECMAScript features
 - Strict type checking
-- Node.js module resolution
-- Source map generation
-- Path aliases
-- Enhanced type safety options
+- Path aliases for clean imports
+- Native TypeScript support
+- Built-in formatter and linter configuration
 
-### ESLint Configuration
+### Type Safety
 
-Comprehensive linting setup with:
+Enhanced type safety with:
 
-- TypeScript-specific rules
-- Code style enforcement
-- Best practices
-- Modern JavaScript conventions
+- Strict TypeScript configuration
+- Runtime environment validation with Zod
+- No implicit any
+- Unchecked indexed access protection
 
 ## Testing
 
-Run tests in watch mode using:
+Run tests in watch mode:
 
 ```bash
-pnpm test
+deno task test:watch
 ```
 
-Tests in CI mode:
+Run tests once:
 
 ```bash
-pnpm test:ci
+deno task test
 ```
 
 Tests with coverage:
 
 ```bash
-pnpm test:coverage
+deno task test:coverage
+```
+
+## Linting and Formatting
+
+Lint your code:
+
+```bash
+deno task lint
+```
+
+Format your code:
+
+```bash
+deno task fmt
+```
+
+Type check your code:
+
+```bash
+deno task check
 ```
 
 ## Project Structure
@@ -112,10 +124,12 @@ pnpm test:coverage
 ```
 typescript-boilerplate/
 ├── src/               # Source files
-├── tsconfig.json     # TypeScript configuration
-├── eslint.config.js  # ESLint configuration
-├── vitest.config.ts  # Vitest configuration
-└── package.json      # Project dependencies and scripts
+│   ├── config/        # Configuration files
+│   ├── exceptions/    # Custom exception classes
+│   ├── helpers/       # Utility functions
+│   └── sum/           # Example module with tests
+├── deno.json          # Deno configuration
+└── README.md          # This file
 ```
 
 ## Contributing
@@ -130,15 +144,16 @@ typescript-boilerplate/
 
 This project is licensed under the MIT License.
 
-## Available Scripts
+## Available Tasks
 
-- `dev`: Run development server with watch mode
-- `test`: Run tests with Vitest
-- `test:ci`: Run tests in CI mode
+- `dev`: Run development server with watch mode and file permissions
+- `start`: Run the application in production mode
+- `test`: Run tests with necessary permissions
+- `test:watch`: Run tests in watch mode
 - `test:coverage`: Run tests with coverage
-- `lint`: Run ESLint with auto-fix
-- `format`: Format code with Prettier
-- `build`: Build TypeScript project
+- `lint`: Run Deno's built-in linter
+- `fmt`: Format code with Deno's built-in formatter
+- `check`: Type check the project
 
 ### Environment Configuration
 
@@ -147,10 +162,21 @@ The environment configuration is handled in a type-safe manner using Zod for val
 - **Runtime Validation**: Environment variables are validated at startup
 - **Type Safety**: Full TypeScript support for environment variables
 - **Schema Definition**: Clear schema definition for required environment variables
-- **Development Safety**: Example environment file provided
-- **IDE Support**: Full autocomplete support for process.env
+- **Development Safety**: Automatic .env file loading in Deno
+- **IDE Support**: Full autocomplete support for environment variables
 
 Required environment variables:
 
 - `APP_KEY`: A base64 string of at least 32 characters
 - `NODE_ENV`: Either 'development' or 'production' (defaults to 'development')
+
+### Why Deno 2?
+
+This boilerplate migrated to Deno 2 for several advantages:
+
+- **Native TypeScript**: No build step required, TypeScript runs directly
+- **Secure by Default**: Explicit permissions for file system, network, and environment access
+- **Standard Library**: Comprehensive standard library with consistent APIs
+- **Modern JavaScript**: Built-in support for modern JavaScript features
+- **Simplified Toolchain**: Integrated linter, formatter, test runner, and bundler
+- **NPM Compatibility**: Can use existing NPM packages when needed

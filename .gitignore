@@ -1,38 +1,39 @@
-lib-cov
-*.seed
+# Logs
 *.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-*.swp
 
-pids
-logs
-results
-tmp
+# Environment variables
+.env
+.env.local
 
 # Coverage reports
-coverage
+coverage/
+.nyc_output/
 
-# API keys and secrets
-.env
+# Deno cache
+.deno/
 
-# Dependency directory
-node_modules
-bower_components
+# Build outputs
+dist/
+build/
 
 # Editors
-.idea
+.idea/
 *.iml
+.vscode/
+*.swp
+*.swo
 
-# Ignore built ts files
-dist/**/*
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# ignore lock file
-pnpm-lock.yaml
-
+# Migration backup
+migration-backup/
 
 ### Linux ###
 *~
