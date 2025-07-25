@@ -1,0 +1,50 @@
+{
+  "name": "@ts-boilerplate/config",
+  "version": "1.0.0",
+  "description": "Configuration utilities and environment management",
+  "exports": {
+    ".": "./mod.ts",
+    "./env": "./env.ts",
+    "./app": "./app_config.ts"
+  },
+  "imports": {
+    "@safe-env/safe-env": "jsr:@safe-env/safe-env@^0.1.7"
+  },
+  "tasks": {
+    "test": "deno test --allow-read --allow-env",
+    "test:watch": "deno test --allow-read --allow-env --watch",
+    "test:coverage": "deno test --allow-read --allow-env --coverage",
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "check": "deno check *.ts"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
+    "lib": [
+      "deno.ns",
+      "es2022",
+      "dom"
+    ]
+  },
+  "lint": {
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "exclude": [
+        "no-slow-types"
+      ]
+    }
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "proseWrap": "preserve"
+  }
+}

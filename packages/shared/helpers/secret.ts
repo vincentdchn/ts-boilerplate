@@ -3,7 +3,7 @@
  * @credit - https://github.com/poppinss/utils
  */
 
-import { config } from "@/config/app.config.ts";
+import { config } from "@ts-boilerplate/config/app";
 
 /**
  * Define a Secret value that hides itself from the logs or the console

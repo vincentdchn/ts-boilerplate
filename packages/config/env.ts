@@ -5,9 +5,8 @@ import { safeEnv, string } from "jsr:@safe-env/safe-env";
  *
  * Validate the environment variables using @safe-env/safe-env
  * It provides type safety and validation for the environment variables
- *
  */
-const env = safeEnv({
+export const env = safeEnv({
   /**
    * ----------------------------------------------------------
    * Chore
@@ -25,5 +24,3 @@ if (env.APP_KEY.length < 32) {
 if (!/^[A-Za-z0-9+/=]+$/.test(env.APP_KEY)) {
   throw new Error("APP_KEY must be a valid base64 string");
 }
-
-export { env };

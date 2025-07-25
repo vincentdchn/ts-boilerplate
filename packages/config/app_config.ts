@@ -5,5 +5,9 @@ export const config = {
      * It is used to hide the sensitive information from the logs
      */
     redactedKeyword: "[redacted]",
+    /**
+     * Whether the logger is enabled
+     */
+    enabled: true,
   },
 };
